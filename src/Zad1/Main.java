@@ -4,9 +4,13 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Season season = showSeasonValue(getSeason());
-        System.out.println(season.toString());
-        showMonths(season);
+        try {
+            Season season = showSeasonValue(getSeason());
+            System.out.println(season.toString());
+            showMonths(season);
+        }catch (NullPointerException e){
+            System.out.println("Bledna nazwa miesiaca");
+        }
     }
 
     public static String getSeason (){
