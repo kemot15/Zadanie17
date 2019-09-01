@@ -26,16 +26,12 @@ public class Main {
     public static Season showSeasonValue (String seasonStr){
         Season season = null;
         Season[] seasons = Season.values();
-        try {
-            season = Season.valueOf(seasonStr);
-        }catch (IllegalArgumentException e){
             for (Season s : seasons){
                 if (s.getSeasonName().equalsIgnoreCase(seasonStr)){
                     season = s;
                     break;
                 }
             }
-        }
         return season;
     }
 }
