@@ -1,13 +1,15 @@
 package Zad1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         try {
             Season season = showSeasonValue(getSeason());
+            System.out.println(season.name());
             System.out.println(season.toString());
-            showMonths(season);
+          //  System.out.println(Arrays.toString(season.getMonthsName()));
         }catch (NullPointerException e){
             System.out.println("Bledna nazwa miesiaca");
         }
@@ -35,33 +37,5 @@ public class Main {
             }
         }
         return season;
-    }
-
-    public static void showMonths(Season seasonName){
-        String[] q1 = {"gru", "sty", "lut"};
-        Months months1 = new Months(q1, Season.SPRING);
-        String[] q2 = {"mar", "kwi", "maj"};
-        Months months2 = new Months(q2, Season.SPRING);
-        String[] q3 = {"cze", "lip", "sie"};
-        Months months3 = new Months(q3, Season.AUTUMN);
-        String[] q4 = {"wrz", "paz", "lis"};
-        Months months4 = new Months(q4, Season.AUTUMN);
-
-        switch (seasonName){
-            case WINTER:
-                System.out.println(months1.toString());
-                break;
-            case SPRING:
-                System.out.println(months2.toString());
-                break;
-            case SUMMER:
-                System.out.println(months3.toString());
-                break;
-            case AUTUMN:
-                System.out.println(months4.toString());
-                break;
-                default:
-                    System.out.println("Bledna pora roku");
-        }
     }
 }

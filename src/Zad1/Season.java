@@ -4,23 +4,29 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public enum Season {
-    SPRING ("wiosna"),
-    SUMMER ("lato"),
-    AUTUMN ("jesien"),
-    WINTER("zima");
+    SPRING ("wiosna", new String[]{"mar", "kwi", "maj"}),
+    SUMMER ("lato", new String[]{"cze", "lip", "sie"}),
+    AUTUMN ("jesien", new String[]{"wrz", "paz", "lis"}),
+    WINTER("zima", new String[]{"gru","sty","lut"});
 
     private final String seasonName;
+    private final String[] monthsName;
 
-    Season(String seasonName) {
+    Season(String seasonName, String[] monthsName) {
         this.seasonName = seasonName;
+        this.monthsName = monthsName;
     }
 
     public String getSeasonName() {
         return seasonName;
     }
 
+    public String[] getMonthsName() {
+        return monthsName;
+    }
+
     @Override
     public String toString() {
-        return name();
+        return Arrays.toString(monthsName);
     }
 }
