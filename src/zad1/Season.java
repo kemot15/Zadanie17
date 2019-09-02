@@ -1,6 +1,5 @@
-package Zad1;
+package zad1;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public enum Season {
